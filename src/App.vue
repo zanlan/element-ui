@@ -21,12 +21,6 @@ export default {
   data() {
     return {
       activeIndex: "0",
-      // items: [
-      //   {
-      //     path: "/layout",
-      //     value: "Layout布局",
-      //   },
-      // ],
     };
   },
   computed: {
@@ -104,9 +98,17 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+#app{
+  border: 2px solid purple;
+  box-sizing: border-box;
+}
 .el-menu--horizontal.el-menu > li > a {
   display: block;
   text-decoration: none;
+}
+.el-menu--horizontal > .el-menu-item{
+  margin: 2px;
+  background: rgba(72, 163, 60, 0.2);
 }
 .el-menu--horizontal > .el-menu-item.is-active {
   background: orange;

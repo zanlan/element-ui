@@ -1,5 +1,24 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <ul>
+      <li>
+          <i class="el-icon-platform-eleme"></i>
+          <span class="icon-name">el-icon-platform-eleme</span>
+      </li>
+    </ul>
   </div>
 </template>
+
+<script>
+export default {
+  data(){
+    return{
+      items:['']
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
