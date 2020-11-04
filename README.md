@@ -11,3 +11,5 @@ https://www.npmjs.com/package/element-ui
  
 Vue.component(Select.name, Select)
 Vue.component(Button.name, Button)
+
+

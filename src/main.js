@@ -6,9 +6,9 @@ import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
 Vue.config.productionTip = false;
-
+import zltable from '@/component/ZiTable'
+Vue.component('zl-table',zltable)
 Vue.use(Element);
-
 new Vue({
   router,
   store,

@@ -58,30 +58,30 @@ export default {
         ["/badge", "Badge标记"],
         ["/avater", "Avater头像"],
         ["/alert", "Alert警告"],
-        ["/loading","Loading加载"],
-        ["/message","Message消息提示"],
-        ["/messageBox","MessageBox弹框"],
-        ["/notification","Notification通知"],
-        ["/navMenu","NavMenu导航菜单"],
-        ["/tabs","Tabs标签页"],
-        ["/breadcrumb","BreadCrumb面包屑"],
-        ["/pageHeader","PageHeader页头"],
-        ["/dropdown","Dropdown下拉菜单"],
-        ["/steps","Step步骤条"],
-        ["/dialog","Dialog对话框"],
-        ["/tooltip","Tooltip文字提示"],
-        ["/popover","Popover弹出框"],
-        ["/popconfirm","Popconfirm"],
-        ["/card","Card卡片"],
-        ["/carousel","Carousel走马灯"],
-        ["/collapse","Collapse折叠面板"],
-        ["/timeline","Timeline时间线"],
-        ["/divider","Divider分割线"],
-        ["/calendar","Calendar日历"],
-        ["/image","Image图片"],
-        ["/backtop","Backtop回到顶部"],
-        ["/infiniteScrool","InfiniteScrool无线滚动"],
-        ["/drawer","Drawer抽屉"],
+        ["/loading", "Loading加载"],
+        ["/message", "Message消息提示"],
+        ["/messageBox", "MessageBox弹框"],
+        ["/notification", "Notification通知"],
+        ["/navMenu", "NavMenu导航菜单"],
+        ["/tabs", "Tabs标签页"],
+        ["/breadcrumb", "BreadCrumb面包屑"],
+        ["/pageHeader", "PageHeader页头"],
+        ["/dropdown", "Dropdown下拉菜单"],
+        ["/steps", "Step步骤条"],
+        ["/dialog", "Dialog对话框"],
+        ["/tooltip", "Tooltip文字提示"],
+        ["/popover", "Popover弹出框"],
+        ["/popconfirm", "Popconfirm"],
+        ["/card", "Card卡片"],
+        ["/carousel", "Carousel走马灯"],
+        ["/collapse", "Collapse折叠面板"],
+        ["/timeline", "Timeline时间线"],
+        ["/divider", "Divider分割线"],
+        ["/calendar", "Calendar日历"],
+        ["/image", "Image图片"],
+        ["/backtop", "Backtop回到顶部"],
+        ["/infiniteScrool", "InfiniteScrool无线滚动"],
+        ["/drawer", "Drawer抽屉"],
       ].map(function (item) {
         return {
           path: item[0],
@@ -89,6 +89,14 @@ export default {
         };
       });
     },
+  },
+  mounted() {
+    var route = window.location.hash.slice(1);
+    this.items.forEach((item, i) => {
+      if (item.path == route) {
+        this.activeIndex = String(i);
+      }
+    });
   },
   methods: {
     tabSelect(a, b) {
@@ -98,7 +106,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-#app{
+#app {
   border: 2px solid purple;
   box-sizing: border-box;
 }
@@ -106,7 +114,7 @@ export default {
   display: block;
   text-decoration: none;
 }
-.el-menu--horizontal > .el-menu-item{
+.el-menu--horizontal > .el-menu-item {
   margin: 2px;
   background: rgba(72, 163, 60, 0.2);
 }
