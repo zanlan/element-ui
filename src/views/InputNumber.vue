@@ -36,6 +36,8 @@
     ></el-input-number>
     <el-divider>配置</el-divider>
     <zl-table :datas="datas1" key="1"></zl-table>
+    <zl-table :datas="datas2" key="1"></zl-table>
+    <zl-table :datas="datas3" key="1"></zl-table>
   </div>
 </template>
 <script>

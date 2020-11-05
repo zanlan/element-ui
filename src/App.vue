@@ -56,7 +56,7 @@ export default {
         ["/tree", "Tree树形空间"],
         ["/pagination", "Pagination分页"],
         ["/badge", "Badge标记"],
-        ["/avater", "Avater头像"],
+        ["/avatar", "Avatar头像"],
         ["/alert", "Alert警告"],
         ["/loading", "Loading加载"],
         ["/message", "Message消息提示"],
@@ -91,9 +91,12 @@ export default {
     },
   },
   mounted() {
-    var route = window.location.hash.slice(1);
+    console.log(this.$router.history.current.matched);
+    var route = window.location.hash.replace(/\//g,'');
     this.items.forEach((item, i) => {
-      if (item.path == route) {
+      var regStr = '/'+route+'/g'
+      var regExp = eval(regStr)
+      if (regExp.test(route)) {
         this.activeIndex = String(i);
       }
     });
@@ -109,6 +112,7 @@ export default {
 #app {
   border: 2px solid purple;
   box-sizing: border-box;
+  min-height: 1000px;
 }
 .el-menu--horizontal.el-menu > li > a {
   display: block;
@@ -116,10 +120,10 @@ export default {
 }
 .el-menu--horizontal > .el-menu-item {
   margin: 2px;
-  background: rgba(72, 163, 60, 0.2);
+  background: rgba(163, 60, 60, 0.2);
 }
 .el-menu--horizontal > .el-menu-item.is-active {
-  background: orange;
+  background: rgb(255, 0, 0);
 }
 </style>
 

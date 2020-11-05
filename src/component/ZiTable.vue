@@ -30,7 +30,7 @@ export default {
 <style lang='scss' scoped>
 .table {
   margin: 0 auto;
-  width: 1200px;
+  width: 80%;
   table {
       margin-bottom: 20px;
     width: 100%;
