@@ -1,6 +1,7 @@
 <template>
   <div class="table">
     <div class="lefttop">{{datas.title}}</div>
+    <div class="secondtitle">{{datas.stitle?datas.stitle:''}}</div>
     <table>
       <thead>
         <tr>
@@ -51,6 +52,10 @@ export default {
     color: red;
     font-weight: 600;
     text-align: left;
+  }
+  .secondtitle{
+    color: purple;
+    font-size: 14px;
   }
 }
 </style>

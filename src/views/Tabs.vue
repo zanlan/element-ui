@@ -2,6 +2,7 @@
   <div class="box">
     <zl-table :datas="datas1" key="1"></zl-table>
     <zl-table :datas="datas2" key="2"></zl-table>
+    <zl-table :datas="datas3" key="3"></zl-table>
   </div>
 </template>
 
@@ -10,25 +11,66 @@ export default {
   data() {
     return {
       datas1: {
-        title: "Attributes",
-        head: ["参数	说明	类型	可选值	默认值"],
+        title: "Tabs Attributes",
+        head: ["参数", "说明", "类型", "可选值", "默认值"],
         body: [
-          ["type	类型	string	success/info/warning/danger	—"],
-          ["closable	是否可关闭	boolean	—	false"],
-          ["disable-transitions	是否禁用渐变动画	boolean	—	false"],
-          ["hit	是否有边框描边	boolean	—	false"],
-          ["color	背景色	string	—	—"],
-          ["size	尺寸	string	medium / small / mini	—"],
-          ["effect	主题	string	dark / light / plain	light"],
+          [
+            "value / v-model",
+            "绑定值，选中选项卡的 name",
+            "string",
+            "—",
+            "第一个选项卡的 name",
+          ],
+          ["type", "风格类型", "string", "card/border-card", "—"],
+          ["closable", "标签是否可关闭", "boolean", "—", "false"],
+          ["addable", "标签是否可增加", "boolean", "—", "false"],
+          ["editable", "标签是否同时可增加和关闭", "boolean", "—", "false"],
+          [
+            "tab-position",
+            "选项卡所在位置",
+            "string",
+            "top/right/bottom/left",
+            "top",
+          ],
+          ["stretch", "标签的宽度是否自撑开", "boolean", "-", "false"],
+          [
+            "before-leave",
+            "切换标签之前的钩子，若返回 false 或者返回 Promise 且被 reject，则阻止切换。",
+            "Function(activeName, oldActiveName)",
+            "—",
+            "—",
+          ],
         ],
       },
-
       datas2: {
-        title: "Events",
-        head: ["事件名称	说明	回调参数"],
+        title: "Tabs Events",
+        head: ["事件名称", "说明", "回调参数"],
         body: [
-          ["click	点击 Tag 时触发的事件	—"],
-          ["close	关闭 Tag 时触发的事件	—"],
+          ["tab-click", "tab 被选中时触发", "被选中的标签 tab 实例"],
+          ["tab-remove", "点击 tab 移除按钮后触发", "被删除的标签的 name"],
+          ["tab-add", "点击 tabs 的新增按钮后触发", "—"],
+          [
+            "edit",
+            "点击 tabs 的新增按钮或 tab 被关闭后触发",
+            "(targetName, action)",
+          ],
+        ],
+      },
+      datas3: {
+        title: "Tab-pane Attributes",
+        head: ["参数", "说明", "类型", "可选值", "默认值"],
+        body: [
+          ["label", "选项卡标题", "string", "—", "—"],
+          ["disabled", "是否禁用", "boolean", "—", "false"],
+          [
+            "name",
+            "与选项卡绑定值 value 对应的标识符，表示选项卡别名",
+            "string",
+            "—",
+            "该选项卡在选项卡列表中的顺序值，如第一个选项卡则为'1'",
+          ],
+          ["closable", "标签是否可关闭", "boolean", "—", "false"],
+          ["lazy", "标签是否延迟渲染", "boolean", "—", "false"],
         ],
       },
     };

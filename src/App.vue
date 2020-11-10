@@ -91,10 +91,9 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$router.history.current.matched);
     var route = window.location.hash.replace(/\//g,'');
     this.items.forEach((item, i) => {
-      var regStr = '/'+route+'/g'
+      var regStr = '/'+item.path.slice(1)+'/g'
       var regExp = eval(regStr)
       if (regExp.test(route)) {
         this.activeIndex = String(i);
