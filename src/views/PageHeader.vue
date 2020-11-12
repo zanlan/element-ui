@@ -1,5 +1,6 @@
 <template>
   <div class="box">
+    <el-page-header @back="goBack" content="详情页面"> </el-page-header>
     <zl-table :datas="datas1" key="1"></zl-table>
     <zl-table :datas="datas2" key="2"></zl-table>
     <zl-table :datas="datas3" key="3"></zl-table>
@@ -8,6 +9,11 @@
 
 <script>
 export default {
+  methods: {
+    goBack() {
+      console.log("go back");
+    },
+  },
   data() {
     return {
       datas1: {

@@ -17,7 +17,7 @@
     </el-row>
 
     <el-row>
-      <el-radio-group v-model="radio4">
+      <el-radio-group v-model="radio4" @change="gotochange">
         <el-radio-button label="上海"></el-radio-button>
         <el-radio-button label="北京"></el-radio-button>
         <el-radio-button label="广州"></el-radio-button>
@@ -83,6 +83,11 @@
 
 <script>
 export default {
+  methods:{
+    gotochange(v){
+      console.log(v);
+    }
+  },
   data() {
     return {
       radio1: "1",

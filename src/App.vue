@@ -71,7 +71,7 @@ export default {
         ["/dialog", "Dialog对话框"],
         ["/tooltip", "Tooltip文字提示"],
         ["/popover", "Popover弹出框"],
-        ["/popconfirm", "Popconfirm"],
+        ["/popconfirm", "Popconfirm气泡确认框"],
         ["/card", "Card卡片"],
         ["/carousel", "Carousel走马灯"],
         ["/collapse", "Collapse折叠面板"],
@@ -80,7 +80,7 @@ export default {
         ["/calendar", "Calendar日历"],
         ["/image", "Image图片"],
         ["/backtop", "Backtop回到顶部"],
-        ["/infiniteScrool", "InfiniteScrool无线滚动"],
+        ["/infiniteScroll", "InfiniteScroll无线滚动"],
         ["/drawer", "Drawer抽屉"],
       ].map(function (item) {
         return {
@@ -109,6 +109,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 #app {
+  padding: 50px;
   border: 2px solid purple;
   box-sizing: border-box;
   min-height: 1000px;

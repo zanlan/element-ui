@@ -58,7 +58,7 @@ const tabRoutes = [
   "/calendar",
   "/image",
   "/backtop",
-  "/infiniteScrool",
+  "/infiniteScroll",
   "/drawer"
 ].map(function(item) {
   let name = item[1].toUpperCase();
