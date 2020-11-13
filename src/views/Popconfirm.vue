@@ -1,5 +1,20 @@
 <template>
   <div class="box">
+    <el-divider>基础用法</el-divider>
+    <el-popconfirm title="这是一段内容确定删除吗？">
+      <el-button slot="reference">删除</el-button>
+    </el-popconfirm>
+
+    <el-divider>自定义</el-divider>
+    <el-popconfirm
+      confirm-button-text="好的"
+      cancel-button-text="不用了"
+      icon="el-icon-info"
+      icon-color="red"
+      title="这是一段内容确定删除吗？"
+    >
+      <el-button slot="reference">删除</el-button>
+    </el-popconfirm>
     <zl-table :datas="datas1" key="1"></zl-table>
     <zl-table :datas="datas2" key="2"></zl-table>
     <zl-table :datas="datas3" key="3"></zl-table>
