@@ -2,7 +2,17 @@
   <div class="box">
     <!-- ------------------------------------------------------------------------------- -->
     <el-divider>基本用法</el-divider>
-    <el-input v-model="input1" placeholder="请输入内容"></el-input>
+    <div>@keyup.13 可以使用keycode码</div>
+    <div>
+      @keyup.enter.alt.ctrl.shift.esc.space.left.right.top.bottom.tab.delete
+      组合键
+    </div>
+    <div>@keyup.enter.native 如果使用在封装组件内 则后面需要加native</div>
+    <el-input
+      v-model="input0"
+      placeholder="请输入内容"
+      @keyup.enter.native="enterfun"
+    ></el-input>
     <!-- ------------------------------------------------------------------------------- -->
     <el-divider>禁用状态</el-divider>
     <el-input placeholder="请输入内容" v-model="input2" :disabled="true">
@@ -227,6 +237,7 @@
 export default {
   data() {
     return {
+      input0: "",
       input1: "",
       input2: "",
       input3: "",
@@ -466,6 +477,9 @@ export default {
     };
   },
   methods: {
+    enterfun(v) {
+      console.log(v);
+    },
     querySearch(queryString, cb) {
       var restaurants = this.restaurants;
       var results = queryString

@@ -80,6 +80,7 @@ export default {
       }
     },
     handleSelectionChange(val) {
+      console.log('val: ', val);
       this.multipleSelection = val;
     },
   },

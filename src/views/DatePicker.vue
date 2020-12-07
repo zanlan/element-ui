@@ -3,7 +3,8 @@
     <el-divider>选择日</el-divider>
     <div class="block">
       <span class="demonstration">默认</span>
-      <el-date-picker v-model="value1" type="date" placeholder="选择日期">
+      {{value1}}
+      <el-date-picker text="11" v-model="value1" type="date" placeholder="选择日期" value-format="yyyy-MM-dd" @change="changefun" @focus="focusfun" @blur="blurfun">
       </el-date-picker>
     </div>
     <div class="block">
@@ -11,8 +12,8 @@
       <el-date-picker
         v-model="value2"
         align="right"
-        type="date"
         placeholder="选择日期"
+        type="date"
         :picker-options="pickerOptions2"
       >
       </el-date-picker>
@@ -341,6 +342,17 @@ export default {
       },
     };
   },
+  methods:{
+    changefun(v){
+      console.log('change事件',v);
+    },
+    focusfun(v){
+      console.log('focus事件',v);
+    },
+    blurfun(v){
+      console.log('blur事件',v);
+    },
+  }
 };
 </script>
 <style lang="scss" scoped>

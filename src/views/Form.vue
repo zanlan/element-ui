@@ -424,8 +424,8 @@ export default {
       if (value === "") {
         callback(new Error("请输入密码"));
       } else {
-        if (this.ruleForm.checkPass !== "") {
-          this.$refs.ruleForm.validateField("checkPass");
+        if (this.ruleForm5.checkPass !== "") {
+          this.$refs.ruleForm5.validateField("checkPass");
         }
         callback();
       }
@@ -433,7 +433,7 @@ export default {
     var validatePass2 = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请再次输入密码"));
-      } else if (value !== this.ruleForm.pass) {
+      } else if (value !== this.ruleForm5.pass) {
         callback(new Error("两次输入密码不一致!"));
       } else {
         callback();
