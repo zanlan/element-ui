@@ -26,6 +26,9 @@
 
 <script>
 export default {
+  created(){
+    this.fun1()
+  },
   methods: {
     open1() {
       const h = this.$createElement;
@@ -38,7 +41,22 @@ export default {
         ),
       });
     },
-
+    fun1: async function () {
+      let arr = [1, 2];
+      for (let i = 0; i < arr.length; i++) {
+        await this.fun2(arr[i]);
+      }
+    },
+    fun2(v) {
+      this.$notify({
+        title: "标题",
+        dangerouslyUseHTMLString: true,
+        duration:0,
+        message: `
+          <div>${v}</div>
+        `
+      });
+    },
     open2() {
       this.$notify({
         title: "提示",
