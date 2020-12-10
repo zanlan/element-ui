@@ -26,19 +26,18 @@
 
 <script>
 export default {
-  created(){
-    this.fun1()
+  created() {
+    this.fun1();
   },
   methods: {
     open1() {
       const h = this.$createElement;
       this.$notify({
         title: "标题名称",
-        message: h(
-          "i",
-          { style: "color: teal" },
-          "这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案这是提示文案"
-        ),
+        message: h("i", { style: "color: teal" }, [
+          h("div", null, "111"),
+          h("el-button", {style:{letterSpacing:'1.5em'},attrs:{size:'small',type:'danger'} "222"}),
+        ]),
       });
     },
     fun1: async function () {
@@ -51,10 +50,10 @@ export default {
       this.$notify({
         title: "标题",
         dangerouslyUseHTMLString: true,
-        duration:0,
+        duration: 0,
         message: `
           <div>${v}</div>
-        `
+        `,
       });
     },
     open2() {

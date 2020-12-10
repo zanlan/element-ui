@@ -1,5 +1,7 @@
 <template>
   <div class="box">
+    <el-divider>只使用颜色</el-divider>
+    <el-link :underline='false' style="cursor:auto;"></el-link>
     <!-- --------------------------------------------------------------------- -->
     <el-divider>基础用法</el-divider>
     <el-row>
